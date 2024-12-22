@@ -1,28 +1,27 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
-    name:
-      ProductService
-  jpa:
-    hibernate:
-      ddl-auto: update
-
-  flyway:
-    locations: classpath:db/migration
-    enabled: true
+    name: marketplace-service
 
   datasource:
     url:
-      jdbc:mysql://${MYSQL_HOST:localhost}:3306/Product
+      jdbc:mysql://${MYSQL_HOST:localhost}:3306/Marketplace
     username:
       root
     password:
       1108
     driver-class-name:
       com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
+eureka:
+  client:
+    enabled: true
 
 springdoc:
   api-docs:
